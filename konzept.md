@@ -313,3 +313,7 @@ Quelle: Reifegradmodell 2025, adaptiert nach T. Off/Paul Meyrat · Julia Junge �
 - Footer verlinkt auf https://www.juliajunge.de/kontakt-und-impressum/
 - Schriften und Bilder liegen lokal: keine externen Anfragen, kein Tracking, kein Speichern.
 - Drachen: Kompass auf der Startseite, Fernglas auf der Ergebnisseite.
+- Fußzeile ohne Quellenzeile, nur Links und Lizenz.
+- Lernschleife: statt eines festen Auswertungstermins in drei Monaten „einen oder mehrere Austauschtermine“ (Team-Meeting, eigenes Treffen, Umfrage, Interviews).
+- Selbstlernkurs und Lernreise werden immer gleichrangig nebeneinander gezeigt.
+- Am Ende der Ergebnisseite steht das Newsletter-Formular wie in den Handouts. Es sendet erst beim Klick an Brevo, und es wird kein Brevo-Skript geladen.

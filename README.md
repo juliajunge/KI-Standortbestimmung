@@ -12,6 +12,8 @@ Eine Selbsteinschätzung in 15 Fragen für NGOs und Vereine, mit Auswertung und 
 Die Seite speichert nichts und schickt nichts weg: keine Cookies, kein localStorage, kein Tracking und keine externen Schriften oder Skripte.
 Die Antworten liegen nur im Arbeitsspeicher des Browsers und sind weg, sobald die Seite geschlossen wird.
 
+Einzige Ausnahme ist die Newsletter-Anmeldung am Ende der Ergebnisseite. Erst wenn jemand auf „Newsletter abonnieren“ klickt, gehen E-Mail-Adresse, Name und Organisation an Brevo. Die Antworten der Standortbestimmung gehen nicht mit. Dafür wird kein Skript von Brevo geladen. Die Formular-Adresse steht in `inhalt.js` unter `links.newsletterFormular`.
+
 ## Texte ändern
 
 Alle Fragen, Antworten, Ergebnistexte, Vorschläge und Links stehen in **`inhalt.js`**.

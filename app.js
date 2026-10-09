@@ -388,29 +388,87 @@
       '<span class="verweis"><a href="' + ziel + '" target="_blank" rel="noopener">&gt; ' + esc(wohin) + "</a></span></div></li>";
   }
 
+  function angebotKarte(name) {
+    var x = I.angebote[name];
+    return '<div class="angebot"><h3>' + esc(x.titel) + "</h3>" +
+      '<p class="angebot-format">' + esc(ersetze(x.format)) + "</p>" +
+      "<p>" + esc(x.text) + "</p>" +
+      '<a class="knopf knopf--orange" href="' + link(x.link) + '" target="_blank" rel="noopener">&gt; ' + esc(x.knopf) + "</a></div>";
+  }
+
+  function lernangeboteHtml(einleitung) {
+    return "<p>" + esc(einleitung) + "</p>" +
+      '<div class="angebote-paar">' + angebotKarte("selbstlernkurs") + angebotKarte("lernreise") + "</div>";
+  }
+
   function angeboteHtml(r) {
-    var A = I.angebote, haupt, neben = [];
+    var L = I.lernangebote;
+    // Am Anfang: Selbstlernkurs und Lernreise gleichrangig
     if (r.gesamt === null || r.gesamt <= 2.5) {
-      haupt = r.menschenGross ? "lernreise" : "selbstlernkurs";
-      neben = [haupt === "lernreise" ? "selbstlernkurs" : "lernreise"];
-    } else {
-      haupt = "erstberatung";
-      if (r.dim.kompetenzen !== null && r.dim.kompetenzen <= 2) neben = ["selbstlernkurs", "lernreise"];
+      return lernangeboteHtml(r.menschenGross ? L.spreizung : L.normal);
     }
-    var h = A[haupt];
+    // Weiter fortgeschritten: Erstberatung, bei schwachen Kompetenzen zusätzlich die Lernangebote
+    var h = I.angebote.erstberatung;
     var html = '<div class="angebot-haupt"><span class="kleinlabel">Meine Empfehlung für euch</span>' +
       "<h3>" + esc(h.titel) + "</h3>" +
       '<p class="angebot-format">' + esc(ersetze(h.format)) + "</p>" +
       "<p>" + esc(h.text) + "</p>" +
-      '<a class="knopf' + (haupt === "erstberatung" ? "" : " knopf--orange") + '" href="' + link(h.link) + '" target="_blank" rel="noopener">&gt; ' + esc(h.knopf) + "</a></div>";
-    if (neben.length) {
-      html += '<div class="angebote-neben">' + neben.map(function (n) {
-        var x = A[n];
-        return '<div class="karte"><h3>' + esc(x.titel) + "</h3><p>" + esc(ersetze(x.format)) + '</p><a href="' + link(x.link) + '" target="_blank" rel="noopener">&gt; ' + esc(x.knopf) + "</a></div>";
-      }).join("") + "</div>";
-    }
-    html += '<p style="margin-top:16px">Du willst auf dem Laufenden bleiben? <a href="' + link("newsletter") + '" target="_blank" rel="noopener">&gt; Newsletter abonnieren</a></p>';
+      '<a class="knopf" href="' + link(h.link) + '" target="_blank" rel="noopener">&gt; ' + esc(h.knopf) + "</a></div>";
+    if (r.dim.kompetenzen !== null && r.dim.kompetenzen <= 2) html += lernangeboteHtml(L.zusaetzlich);
     return html;
+  }
+
+  // Newsletter-Anmeldung: wird erst beim Absenden an Brevo geschickt, ohne Skript von Brevo.
+  // Übertragen werden nur die Felder des Formulars, nie die Antworten der Standortbestimmung.
+  function newsletterHtml() {
+    var N = I.newsletter;
+    return '<section class="newsletter" id="newsletter">' +
+      '<div class="newsletter-kopf"><div>' +
+        '<span class="label">Newsletter</span>' +
+        "<h2>" + esc(N.titel) + "</h2>" +
+        "<p>" + esc(N.text) + "</p>" +
+      '</div><img src="bilder/drache-brief.png" alt="Drache mit Brief"></div>' +
+      '<form id="newsletter-form" novalidate>' +
+        '<div class="newsletter-felder">' +
+          '<div class="newsletter-feld--breit"><label class="entry__label" for="EMAIL">E-Mail-Adresse *</label>' +
+            '<input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email" placeholder="name@verein.de" required></div>' +
+          '<div><label class="entry__label" for="VORNAME">Name <span class="freiwillig">(freiwillig)</span></label>' +
+            '<input class="input" maxlength="200" type="text" id="VORNAME" name="VORNAME" autocomplete="name"></div>' +
+          '<div><label class="entry__label" for="ORGANISATION">Organisation <span class="freiwillig">(freiwillig)</span></label>' +
+            '<input class="input" maxlength="200" type="text" id="ORGANISATION" name="ORGANISATION" autocomplete="organization"></div>' +
+        "</div>" +
+        '<label class="newsletter-optin"><input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required>' +
+          '<span class="checkbox"></span><span>Ich möchte den Newsletter erhalten und akzeptiere die <a href="' + link("datenschutzerklaerung") + '" target="_blank" rel="noopener">Datenschutzerklärung</a>.</span></label>' +
+        '<input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+        '<p class="newsletter-meldung" id="newsletter-meldung" role="status" aria-live="polite"></p>' +
+        '<button class="knopf" type="submit" id="newsletter-knopf">&gt; Newsletter abonnieren</button>' +
+        '<p class="newsletter-klein">Erst wenn du auf „Newsletter abonnieren“ klickst, werden deine Angaben aus diesem Formular an Brevo gesendet – deine Antworten aus der Standortbestimmung nicht. Abmelden kannst du dich jederzeit über den Link in jeder Ausgabe. Für den Versand nutze ich Brevo, gemäß den <a href="' + link("brevoNutzung") + '" target="_blank" rel="nofollow noopener">Nutzungsbedingungen</a>.</p>' +
+      "</form></section>";
+  }
+
+  function newsletterAktivieren() {
+    var form = document.getElementById("newsletter-form");
+    var meldung = document.getElementById("newsletter-meldung");
+    var knopf = document.getElementById("newsletter-knopf");
+    function zeige(text, art) { meldung.textContent = text; meldung.className = "newsletter-meldung newsletter-meldung--" + art; }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = form.EMAIL.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { zeige("Bitte prüf deine E-Mail-Adresse.", "fehler"); form.EMAIL.focus(); return; }
+      if (!form.OPT_IN.checked) { zeige("Bitte bestätige, dass du den Newsletter erhalten möchtest.", "fehler"); form.OPT_IN.focus(); return; }
+      var daten = new URLSearchParams();
+      daten.append("EMAIL", email);
+      daten.append("VORNAME", form.VORNAME.value.trim());
+      daten.append("ORGANISATION", form.ORGANISATION.value.trim());
+      daten.append("OPT_IN", "1");
+      daten.append("email_address_check", form.email_address_check.value);
+      daten.append("locale", "de");
+      knopf.disabled = true;
+      fetch(link("newsletterFormular"), { method: "POST", mode: "no-cors", body: daten })
+        .then(function () { form.reset(); zeige(I.newsletter.erfolg, "erfolg"); })
+        .catch(function () { zeige(I.newsletter.fehler, "fehler"); })
+        .then(function () { knopf.disabled = false; });
+    });
   }
 
   function ergebnis() {
@@ -480,10 +538,12 @@
         '<button class="knopf" type="button" id="drucken">&gt; Ergebnis als PDF speichern</button>' +
         '<button class="knopf knopf--leise" type="button" id="neu">Neu beginnen</button>' +
       "</div>" +
-      '<p class="hinweis-fluechtig">Deine Antworten wurden nicht gespeichert. Wenn du diese Seite schließt, sind sie weg. Im Druckdialog kannst du „Als PDF speichern“ wählen.</p>';
+      '<p class="hinweis-fluechtig">Deine Antworten wurden nicht gespeichert. Wenn du diese Seite schließt, sind sie weg. Im Druckdialog kannst du „Als PDF speichern“ wählen.</p>' +
+      newsletterHtml();
 
     anzeigen(html);
     document.getElementById("drucken").addEventListener("click", function () { window.print(); });
+    newsletterAktivieren();
     document.getElementById("neu").addEventListener("click", function () {
       if (window.confirm("Neu beginnen? Deine bisherigen Antworten werden gelöscht.")) { antworten = {}; start(); }
     });

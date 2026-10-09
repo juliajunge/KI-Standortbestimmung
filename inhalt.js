@@ -17,6 +17,10 @@ window.INHALT = {
     lernreise: "https://www.juliajunge.de/ki-lernreise-klassik/",
     erstberatung: "https://meet.brevo.com/julia-junge/30-minutiges-meeting",
     newsletter: "https://juliajunge.de/newsletter",
+    datenschutzerklaerung: "https://www.juliajunge.de/datenschutzerklaerung/",
+    brevoNutzung: "https://www.brevo.com/de/legal/termsofuse/",
+    // Adresse aus dem Brevo-Formular (wie in den Handouts). Ändert sich das Formular bei Brevo, hier anpassen.
+    newsletterFormular: "https://dd61c51f.sibforms.com/serve/MUIFAJ9bCJTWl4vU2fgVD0u05UKr9SFpTpU5tde-RFs0MaglkQeoTglQKh74CWllLGDzDpAWAZ4FTN5naf61_iyDI9gZTE3Cg_68PInY37UyD6MzByzDEw_GG4rxxz-c8An5vZ9fvCmWghOsnRfqlmDnc0zS23U9qIGYLKHB7uzLW24kgRmHqnhNE-Lo9WMXXg8FvshVQDkJavA6",
     website: "https://juliajunge.de",
     impressum: "https://www.juliajunge.de/kontakt-und-impressum/"
   },
@@ -255,21 +259,35 @@ window.INHALT = {
 
   lernschleife: {
     titel: "Denkt in Schleifen, nicht in Plänen",
-    text: "KI entwickelt sich zu schnell für fertige Strategien. Was trägt, ist ein Rhythmus: ausprobieren, auswerten, besser weitermachen, wieder auswerten. <strong>Legt jetzt einen Auswertungstermin fest – in etwa drei Monaten.</strong> Diese Fragen helfen dabei:",
+    text: "KI entwickelt sich zu schnell für fertige Strategien. Was trägt, ist ein Rhythmus: ausprobieren, auswerten, besser weitermachen, wieder auswerten. <strong>Legt jetzt einen oder mehrere Austauschtermine fest.</strong> Das kann ein Punkt im nächsten Team-Meeting sein, ein eigenes Treffen, eine kurze Umfrage oder ein paar Interviews – nächste Woche oder in drei Monaten. Hauptsache, es ist klar, wann ihr das nächste Mal auswertet und plant. Diese Fragen helfen dabei:",
     fragen: [
       "Wo haben wir KI erfolgreich eingesetzt – und wo nicht?",
       "Was wollen wir ausweiten, und was lassen wir bewusst bleiben?",
       "Welche Bedenken haben sich bestätigt, welche nicht?",
       "Was wollen wir selbst machen und nicht an KI abgeben?"
     ],
-    tipp: "Speichere dieses Ergebnis als PDF und mach die Standortbestimmung beim Auswertungstermin noch einmal. So seht ihr, was sich bewegt hat. Und wenn mehrere von euch sie ausfüllen, sind die Stellen, an denen ihr unterschiedlich antwortet, euer bester Gesprächsstoff."
+    tipp: "Speichere dieses Ergebnis als PDF und mach die Standortbestimmung bei einem eurer nächsten Austauschtermine noch einmal. So seht ihr, was sich bewegt hat. Und wenn mehrere von euch sie ausfüllen, sind die Stellen, an denen ihr unterschiedlich antwortet, euer bester Gesprächsstoff."
+  },
+
+  // Einleitung vor den beiden gleichrangigen Lernangeboten (Selbstlernkurs und Lernreise)
+  lernangebote: {
+    spreizung: "Wenn bei euch Welten dazwischen liegen, hilft es, gemeinsam auf einen Stand zu kommen. Dafür gibt es zwei Wege mit ähnlichen Inhalten – wählt, was besser zu euch passt:",
+    normal: "Damit alle bei euch eine gemeinsame Grundlage bekommen, gibt es zwei Wege mit ähnlichen Inhalten – wählt, was besser zu euch passt:",
+    zusaetzlich: "Für eine gemeinsame Grundlage im Team gibt es außerdem zwei Lernangebote mit ähnlichen Inhalten:"
+  },
+
+  newsletter: {
+    titel: "Mehr davon in dein Postfach",
+    text: "1–2-mal im Monat Praxistipps, Updates und Einordnung rund um KI für Vereine und NGOs.",
+    erfolg: "Danke, deine Anmeldung ist angekommen. Schau gleich in dein Postfach und bestätige sie.",
+    fehler: "Deine Anmeldung konnte nicht gesendet werden. Bitte versuch es noch einmal."
   },
 
   angebote: {
     selbstlernkurs: { titel: "Selbstlernkurs", format: "6 Module mit Videos, Erklärungen und Aufgaben – jederzeit startbar", link: "selbstlernkurs", knopf: "Zum Selbstlernkurs",
-      text: "Damit alle bei euch eine gemeinsame Grundlage bekommen: Im Selbstlernkurs lernt jede*r im eigenen Tempo, und ihr könnt sofort starten. Ideal für Teams, die selbstbestimmt lernen wollen." },
+      text: "Jede*r lernt im eigenen Tempo, und ihr könnt sofort starten. Gut für Teams, die selbstbestimmt lernen wollen." },
     lernreise: { titel: "Lernreise", format: "4 Wochen mit 4 Live-Workshops und Transferaufgaben – nächster Start: {lernreiseStart}", link: "lernreise", knopf: "Zur Lernreise",
-      text: "Wenn bei euch Welten dazwischen liegen, hilft gemeinsames Live-Lernen am meisten: In der Lernreise kommt ihr in vier Wochen als Team auf einen Stand und übertragt das Gelernte direkt in euren Alltag." },
+      text: "Ihr lernt gemeinsam live in vier Workshops und übertragt das Gelernte mit Transferaufgaben direkt in euren Alltag." },
     erstberatung: { titel: "Kostenlose Erstberatung", format: "30 Minuten online", link: "erstberatung", knopf: "Termin buchen",
       text: "Ihr seid schon ein gutes Stück weit. In einem kostenlosen Erstgespräch schauen wir gemeinsam, was ihr braucht, um in die nächste Schleife zu kommen. Gerade der Schritt ins strategische Experimentieren gelingt mit Begleitung oft schneller." }
   }
