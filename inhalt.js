@@ -31,6 +31,9 @@ window.INHALT = {
     { id: "unterschiede", titel: "Wie unterschiedlich seid ihr?", intro: "Zum Schluss: Wie weit liegen Bereiche und Menschen bei euch auseinander?" }
   ],
 
+  // Erscheint unter jeder Einschätzungsfrage mit fünf Stufen
+  hinweisStufe: "Wähle die Antwort, die am ehesten zutrifft – auch wenn sie nicht ganz genau passt.",
+
   stufen: ["Initiierung", "Entwicklung", "Anwendung", "Integration", "Optimierung"],
 
   dimensionen: [

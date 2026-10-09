@@ -156,7 +156,8 @@
       '<form class="frage" id="frage" novalidate>' +
         "<fieldset><legend class=\"versteckt\">" + esc(f.frage) + "</legend>" +
         "<h2>" + esc(f.frage) + "</h2>" +
-        (f.hinweis ? '<p class="hinweis">' + esc(f.hinweis) + "</p>" : "") +
+        (f.hinweis || f.typ === "stufe" ? '<p class="hinweis">' +
+          [f.hinweis, f.typ === "stufe" ? I.hinweisStufe : ""].filter(Boolean).map(esc).join(" ") + "</p>" : "") +
         frageInhalt(f) +
         "</fieldset>" +
         '<div class="navigation">' +
