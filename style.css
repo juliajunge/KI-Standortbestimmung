@@ -131,6 +131,7 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 .bereich:last-child { border-bottom: 1px solid var(--border-content); }
 .bereich legend { font-weight: 700; padding: 0; margin-bottom: 8px; float: left; width: 100%; }
 .bereich .skala { clear: both; }
+.skala--oben { margin-bottom: 8px; }
 .bereich legend small { font-weight: 400; display: block; font-size: .85em; }
 .skala { display: flex; flex-wrap: wrap; gap: 8px; }
 .skala .option > span { padding: 6px 14px; border-radius: 999px; font-size: .9em; }
@@ -195,7 +196,9 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 .hinweis-fluechtig { font-size: .85em; margin-top: 16px; }
 
 /* Newsletter (wie in den Handouts) */
-.newsletter { background: var(--jj-offwhite); border-radius: 16px; padding: 28px 28px 24px; margin: 56px 0 0; }
+.newsletter { background: var(--jj-offwhite); border-radius: 16px; padding: 28px 28px 24px; margin: 72px 0 0; position: relative; }
+/* dezente Trennlinie über dem Kasten, mittig im Abstand zum Inhalt (wie in den Handouts) */
+.newsletter::before { content: ""; position: absolute; left: 0; right: 0; top: -36px; height: 1px; background: var(--border-content); }
 .newsletter-kopf { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; margin-bottom: 16px; }
 .newsletter-kopf .label { margin-bottom: 12px; }
 .newsletter h2 { margin-bottom: 8px; }
@@ -277,3 +280,6 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 h1:focus, h2:focus { outline: none; }
+.skala--oben .option > span { background: var(--jj-offwhite); border-color: var(--jj-offwhite); }
+.skala--oben .option:hover > span { border-color: var(--jj-green-dark); }
+.skala--oben .option input:checked + span { background: var(--jj-green-light); border-color: var(--jj-green-light); }

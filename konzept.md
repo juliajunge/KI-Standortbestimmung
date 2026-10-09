@@ -317,3 +317,7 @@ Quelle: Reifegradmodell 2025, adaptiert nach T. Off/Paul Meyrat · Julia Junge �
 - Lernschleife: statt eines festen Auswertungstermins in drei Monaten „einen oder mehrere Austauschtermine“ (Team-Meeting, eigenes Treffen, Umfrage, Interviews).
 - Selbstlernkurs und Lernreise werden immer gleichrangig nebeneinander gezeigt.
 - Am Ende der Ergebnisseite steht das Newsletter-Formular wie in den Handouts. Es sendet erst beim Klick an Brevo, und es wird kein Brevo-Skript geladen.
+- Arbeitsbereiche: „Diesen Bereich gibt es bei uns nicht“ steht abgesetzt in einer eigenen Zeile über der Einschätzung.
+- Ehrenamt-Frage: Option „Wir haben keine Ehrenamtlichen“. Dann fallen Ehrenamtliche auch aus den Vorschlägen heraus (z. B. bei den KI-Interviews).
+- Unterschiede: Es gibt eigene Texte für Unterschiede zwischen Menschen und für Unterschiede zwischen Bereichen. Bei „Alle ähnlich“ ist also nicht mehr von Vorreiter*innen die Rede.
+- Über dem Newsletter steht eine schmale Trennlinie, wie in den Handouts.

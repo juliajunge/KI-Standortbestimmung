@@ -154,7 +154,7 @@ window.INHALT = {
     ]},
 
     // ---------- Teil 3: Unterschiede ----------
-    { id: "U1", teil: "unterschiede", typ: "bereiche", frage: "Wie stark wird KI in euren Arbeitsbereichen genutzt?", hinweis: "Wähle für jeden Bereich eine Antwort. Wenn du einen Bereich nicht kennst, wähle „Weiß nicht“.",
+    { id: "U1", teil: "unterschiede", typ: "bereiche", frage: "Wie stark wird KI in euren Arbeitsbereichen genutzt?", hinweis: "Wähle für jeden Bereich eine Antwort. Gibt es einen Bereich bei euch nicht, wähl das oben. Kennst du ihn nicht gut genug, wähl „Weiß nicht“.",
       bereiche: [
         { id: "mittel", text: "Mittelakquise und Fundraising", beispiel: "Förderanträge, Spendenbriefe" },
         { id: "oeffentlichkeit", text: "Öffentlichkeitsarbeit", beispiel: "Social Media, Newsletter, Presse" },
@@ -168,8 +168,8 @@ window.INHALT = {
         { wert: 2, text: "Vereinzelt" },
         { wert: 3, text: "Regelmäßig" },
         { wert: 4, text: "Systematisch" },
-        { wert: "nz", text: "Trifft nicht zu" },
-        { wert: "wn", text: "Weiß nicht" }
+        { wert: "wn", text: "Weiß nicht", leise: true },
+        { wert: "nz", text: "Diesen Bereich gibt es bei uns nicht", oben: true }
       ]
     },
     { id: "U2", teil: "unterschiede", typ: "wahl", frage: "Welches Bild passt am ehesten zu den Menschen bei euch?", hinweis: "Jeder Punkt steht für eine Person – je weiter rechts, desto mehr nutzt sie KI.", optionen: [
@@ -180,7 +180,7 @@ window.INHALT = {
       { wert: "wn", text: "Weiß ich nicht" }
     ]},
     { id: "U3", teil: "unterschiede", typ: "wahl", frage: "Sind Ehrenamtliche beim Thema KI mit dabei?", optionen: [
-      { wert: "nz", text: "Betrifft uns nicht" },
+      { wert: "keine", text: "Wir haben keine Ehrenamtlichen" },
       { wert: "nein", text: "Nein, bisher nicht" },
       { wert: "teilweise", text: "Teilweise" },
       { wert: "ja", text: "Ja, genauso wie Hauptamtliche" }
@@ -198,11 +198,20 @@ window.INHALT = {
   },
 
   spreizung: {
-    gross: [
-      "<strong>Bei euch liegen Welten dazwischen – und das ist normal.</strong> Große Unterschiede sind eine echte Chance: Ihr habt eigene Vorreiter*innen, die zeigen können, was funktioniert, und Bereiche, die von anderen lernen können, statt bei null anzufangen.",
-      "<strong>Das Risiko:</strong> Wenn die Weiten unbemerkt weiterziehen, entstehen Insellösungen, Wissen bleibt bei Einzelnen, und die anderen fühlen sich abgehängt oder überrollt.",
-      "<strong>Was hilft:</strong> Tandems aus Erfahrenen und Einsteiger*innen, regelmäßige „Zeig mal“-Runden zwischen den Bereichen – und kritische Stimmen bewusst einbinden: Sie helfen, die Kriterien für gute KI-Nutzung festzulegen."
+    // Große Unterschiede zwischen den Menschen (Personenbild „Wenige Vorreiter*innen“ oder „Zwei Lager“)
+    menschen: [
+      "<strong>Zwischen den Menschen bei euch liegen Welten – und das ist normal.</strong> Das ist eine echte Chance: Ihr habt eigene Vorreiter*innen, die zeigen können, was funktioniert. Alle anderen können von ihnen lernen, statt bei null anzufangen.",
+      "<strong>Das Risiko:</strong> Wenn die Weiten unbemerkt weiterziehen, bleibt Wissen bei Einzelnen, und die anderen fühlen sich abgehängt oder überrollt.",
+      "<strong>Was hilft:</strong> Tandems aus Erfahrenen und Einsteiger*innen, regelmäßige „Zeig mal“-Runden – und kritische Stimmen bewusst einbinden: Sie helfen, die Kriterien für gute KI-Nutzung festzulegen."
     ],
+    // Große Unterschiede zwischen den Arbeitsbereichen, die Menschen sind aber ähnlich weit
+    bereiche: [
+      "<strong>Zwischen euren Arbeitsbereichen liegen Welten.</strong> Das ist eine Chance: Bereiche, in denen KI schon gut läuft, sind Vorbilder für die anderen. Was dort funktioniert, lässt sich oft übertragen.",
+      "<strong>Das Risiko:</strong> Es entstehen Insellösungen – jeder Bereich nutzt andere Tools und Regeln. Und wo KI noch nicht angekommen ist, entsteht schnell der Eindruck, sie passe hier nicht.",
+      "<strong>Was hilft:</strong> „Zeig mal“-Runden zwischen den Bereichen und gemeinsam prüfen, welche Anwendungen sich übertragen lassen – und wo KI wirklich nicht passt."
+    ],
+    // Zusatz, wenn Menschen UND Bereiche weit auseinanderliegen
+    beides: "Auch zwischen euren Arbeitsbereichen liegen große Unterschiede. Prüft gemeinsam, welche Anwendungen aus den weiten Bereichen sich auf die anderen übertragen lassen.",
     lager: "Bei „zwei Lagern“ droht KI zum Streitthema zu werden statt zum gemeinsamen Lernfeld. Holt beide Seiten an einen Tisch: Die Begeisterten zeigen, was geht, die Kritischen helfen, Grenzen und Kriterien festzulegen.",
     klein: "Ihr seid ungefähr gleich weit. Das ist eine gute Voraussetzung, um gemeinsam den nächsten Schritt zu gehen. Achtet darauf, dass ihr euch nicht gegenseitig ausbremst: Wer schneller vorangehen möchte, darf das als „Early Adopter“ für alle tun.",
     unbekannt: "Wie weit ihr auseinanderliegt, lässt sich aus deinen Antworten nicht sicher sagen. Das ist schon eine Erkenntnis: Fragt doch einmal in die Runde, wer KI wofür nutzt.",
@@ -232,7 +241,8 @@ window.INHALT = {
     A7: { text: "Richtet einen KI-Kanal oder eine Infoecke ein und schafft regelmäßigen Austausch.", ziel: "schritt-2", label: "Schritt 2" },
     A8: { text: "Entwerft einen groben Zeitplan für die nächsten 6–12 Monate.", ziel: "zeitplan", label: "Zeitplan" },
     B1: { text: "Macht KI-Bedarfs-Workshops: Wo drückt der Schuh? Sammelt eine „KI-Wunschliste“, zunächst ohne auf Machbarkeit zu achten.", ziel: "schritt-3", label: "Schritt 3" },
-    B2: { text: "Führt kurze KI-Interviews mit Mitarbeitenden, Ehrenamtlichen und Zielgruppen über ihre täglichen Herausforderungen.", ziel: "schritt-3", label: "Schritt 3" },
+    B2: { text: "Führt kurze KI-Interviews mit Mitarbeitenden, Ehrenamtlichen und Zielgruppen über ihre täglichen Herausforderungen.",
+      textOhneEhrenamt: "Führt kurze KI-Interviews mit Mitarbeitenden und Zielgruppen über ihre täglichen Herausforderungen.", ziel: "schritt-3", label: "Schritt 3" },
     B3: { text: "Trefft Entscheidungen über zwei, drei Fokusbereiche und haltet sie in einer KI-Roadmap für die nächsten 3–6 Monate fest.", ziel: "schritt-3", label: "Schritt 3" },
     B4: { text: "Bindet Betriebsrat, Datenschutzbeauftragte und Schwerbehindertenvertretung ein.", ziel: "schritt-3", label: "Schritt 3" },
     B5: { text: "Erstellt eine Tool-Landkarte und eine Kostenübersicht für die nächsten 6 Monate.", ziel: "schritt-4", label: "Schritt 4" },

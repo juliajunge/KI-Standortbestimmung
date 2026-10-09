@@ -119,12 +119,12 @@
     } else if (f.typ === "bereiche") {
       var werte = a || {};
       f.bereiche.forEach(function (b) {
+        var name = f.id + "-" + b.id;
+        function opt(s) { return optionHtml(name, s.wert, esc(s.text), werte[b.id] === s.wert, s.leise || s.oben ? "option--leise" : ""); }
         html += '<fieldset class="bereich"><legend>' + esc(b.text) + "<small>" + esc(b.beispiel) + "</small></legend>" +
-          '<div class="skala">';
-        f.skala.forEach(function (s) {
-          html += optionHtml(f.id + "-" + b.id, s.wert, esc(s.text), werte[b.id] === s.wert);
-        });
-        html += "</div></fieldset>";
+          '<div class="skala skala--oben">' + f.skala.filter(function (s) { return s.oben; }).map(opt).join("") + "</div>" +
+          '<div class="skala">' + f.skala.filter(function (s) { return !s.oben; }).map(opt).join("") + "</div>" +
+          "</fieldset>";
       });
     }
     return html;
@@ -357,9 +357,12 @@
         '<p style="margin:0"><span class="kleinlabel">Die Menschen bei euch</span><strong>' + esc(bild.text) + "</strong> – " + esc(bild.erklaerung) + "</p>" + punkteSvg(bild.punkte) + "</div>";
     }
     var S = I.spreizung;
-    if (r.spreizungGross) {
-      S.gross.forEach(function (t) { html += "<p>" + t + "</p>"; });
+    if (r.menschenGross) {
+      S.menschen.forEach(function (t) { html += "<p>" + t + "</p>"; });
       if (r.menschen === "lager") html += "<p>" + S.lager + "</p>";
+      if (r.bereicheGross) html += "<p>" + S.beides + "</p>";
+    } else if (r.bereicheGross) {
+      S.bereiche.forEach(function (t) { html += "<p>" + t + "</p>"; });
     } else if (r.spreizungUnbekannt) {
       html += "<p>" + S.unbekannt + "</p>";
     } else {
@@ -382,9 +385,10 @@
 
   function schrittHtml(id) {
     var s = I.schritte[id];
+    var text = antworten.U3 === "keine" && s.textOhneEhrenamt ? s.textOhneEhrenamt : s.text;
     var ziel = leitfadenLink(s.ziel);
     var wohin = s.ziel === "leitlinien" ? "Zur Leitlinien-Vorlage" : "Im Leitfaden: " + s.label;
-    return '<li class="' + (s.warnung ? "warnung" : "") + '"><div><p>' + esc(s.text) + "</p>" +
+    return '<li class="' + (s.warnung ? "warnung" : "") + '"><div><p>' + esc(text) + "</p>" +
       '<span class="verweis"><a href="' + ziel + '" target="_blank" rel="noopener">&gt; ' + esc(wohin) + "</a></span></div></li>";
   }
 
