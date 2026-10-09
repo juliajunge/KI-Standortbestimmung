@@ -78,7 +78,7 @@ Die Optionen entsprechen den Stufen 1 bis 5 des Reifegradmodells, sind aber als 
 1. Keine sind erlaubt oder eingerichtet
 2. Jede*r nutzt auf eigene Faust kostenlose Tools
 3. Es gibt eine Liste empfohlener Tools und erste bezahlte Lizenzen
-4. In allen Bereichen gibt es eine solide Ausstattung mit Lizenzen
+4. In den meisten Bereichen gibt es eine solide Ausstattung mit Lizenzen
 5. Wir haben eine umfassende, flexible Ausstattung mit verlässlichem Support
 
 **T2 · Arbeitet KI bei euch mit euren eigenen Daten und Systemen?**

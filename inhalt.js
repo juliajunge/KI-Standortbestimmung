@@ -41,7 +41,7 @@ window.INHALT = {
       "Es sind noch keine KI-Tools erlaubt oder eingerichtet.",
       "Einzelne nutzen kostenlose Tools auf eigene Faust.",
       "Es gibt empfohlene Tools, erste Lizenzen, und einzelne Tools arbeiten mit euren Daten.",
-      "Ihr seid in allen Bereichen solide ausgestattet, KI ist mit euren Systemen verbunden.",
+      "Ihr seid in den meisten Bereichen solide ausgestattet, KI ist mit euren Systemen verbunden.",
       "Ihr habt eine umfassende, flexible Ausstattung mit verlässlichem Support."
     ]},
     { id: "kompetenzen", titel: "Kompetenzen", fragen: ["K1", "K2"], stufen: [
@@ -103,7 +103,7 @@ window.INHALT = {
       "Keine sind erlaubt oder eingerichtet",
       "Jede*r nutzt auf eigene Faust kostenlose Tools",
       "Es gibt eine Liste empfohlener Tools und erste bezahlte Lizenzen",
-      "In allen Bereichen gibt es eine solide Ausstattung mit Lizenzen",
+      "In den meisten Bereichen gibt es eine solide Ausstattung mit Lizenzen",
       "Wir haben eine umfassende, flexible Ausstattung mit verlässlichem Support"
     ]},
     { id: "T2", teil: "org", dimension: "technik", typ: "stufe", weissNicht: true, frage: "Arbeitet KI bei euch mit euren eigenen Daten und Systemen?", optionen: [
