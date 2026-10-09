@@ -156,8 +156,7 @@ window.INHALT = {
         { id: "oeffentlichkeit", text: "Öffentlichkeitsarbeit", beispiel: "Social Media, Newsletter, Presse" },
         { id: "advocacy", text: "Advocacy und Interessenvertretung", beispiel: "Stellungnahmen, Positionspapiere" },
         { id: "zielgruppen", text: "Zielgruppenkommunikation", beispiel: "Anschreiben, Infomaterial" },
-        { id: "verwaltung", text: "Personal und Verwaltung", beispiel: "Ausschreibungen, Onboarding, Dokumentation" },
-        { id: "facharbeit", text: "Eure Facharbeit", beispiel: "z. B. Bildung, Beratung, Pflege, Jugendarbeit" }
+        { id: "verwaltung", text: "Personal und Verwaltung", beispiel: "Ausschreibungen, Onboarding, Dokumentation" }
       ],
       skala: [
         { wert: 1, text: "Noch gar nicht" },

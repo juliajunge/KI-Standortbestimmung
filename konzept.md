@@ -149,7 +149,6 @@ Für jeden Bereich kann man eine von fünf Antworten wählen: *Trifft bei uns ni
 - Advocacy und Interessenvertretung (Stellungnahmen, Positionspapiere)
 - Zielgruppenkommunikation und Beratung (Anschreiben, Infomaterial)
 - Personal und Verwaltung (Ausschreibungen, Onboarding, Dokumentation)
-- *Eure Fachaufgaben (z. B. Bildungsarbeit, Pflege, Projektarbeit)* ← **zur Entscheidung, siehe offene Fragen**
 
 Kurzer Hinweis darunter: „Wenn du einen Bereich nicht kennst, wähle ‚Weiß nicht‘.“
 
@@ -308,7 +307,7 @@ Quelle: Reifegradmodell 2025, adaptiert nach T. Off/Paul Meyrat · Julia Junge �
 
 ## Entschieden nach der Konzeptphase
 
-- Arbeitsbereiche: Die fünf aus dem Modell plus **„Eure Facharbeit“** (z. B. Bildung, Beratung, Pflege, Jugendarbeit).
+- Arbeitsbereiche: die fünf aus dem Modell, ohne Ergänzung.
 - Lernreise: nach außen nur „Lernreise“, nächster Start **April 2027** (in `inhalt.js` unter `einstellungen` änderbar).
 - Footer verlinkt auf https://www.juliajunge.de/kontakt-und-impressum/
 - Schriften und Bilder liegen lokal: keine externen Anfragen, kein Tracking, kein Speichern.
