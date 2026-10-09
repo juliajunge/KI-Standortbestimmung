@@ -131,7 +131,7 @@ window.INHALT = {
       "Gar nicht – die Leitung hat sich noch nicht damit beschäftigt, niemand ist zuständig",
       "KI wird geduldet, jemand kümmert sich nebenbei oder inoffiziell darum",
       "Die Leitung hat klar Ja gesagt, eine beauftragte Person oder ein Team hat Zeit dafür, für einzelne Bereiche gibt es Ziele",
-      "Es gibt feste Zuständigkeiten in allen Bereichen, KI ist Teil unserer Strategie bzw. Roadmap",
+      "Es gibt feste Zuständigkeiten für die einzelnen Bereiche oder Teams, KI ist Teil unserer Strategie bzw. Roadmap",
       "Wir denken unsere Arbeit von unserer Mission her mit KI neu und setzen neue Ideen schnell um"
     ]},
     { id: "S2", teil: "org", dimension: "strategie", typ: "stufe", weissNicht: true, frage: "Wertet ihr eure Erfahrungen mit KI gezielt aus?", optionen: [

@@ -110,7 +110,7 @@ Die Optionen entsprechen den Stufen 1 bis 5 des Reifegradmodells, sind aber als 
 1. Gar nicht. Die Leitung hat sich noch nicht damit beschäftigt, niemand ist zuständig
 2. KI wird geduldet, jemand kümmert sich nebenbei oder inoffiziell darum
 3. Die Leitung hat klar Ja gesagt, eine beauftragte Person oder ein Team hat Zeit dafür, für einzelne Bereiche gibt es Ziele
-4. Es gibt feste Zuständigkeiten in allen Bereichen, KI ist Teil unserer Strategie bzw. Roadmap
+4. Es gibt feste Zuständigkeiten für die einzelnen Bereiche oder Teams, KI ist Teil unserer Strategie bzw. Roadmap
 5. Wir denken unsere Arbeit von unserer Mission her mit KI neu und setzen neue Ideen schnell um
 
 **S2 · Wertet ihr eure Erfahrungen mit KI gezielt aus?** *(aus dem Leitfaden: Arbeiten in Schleifen)*
