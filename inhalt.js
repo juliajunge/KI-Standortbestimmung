@@ -302,6 +302,11 @@ window.INHALT = {
     lernreise: { titel: "Lernreise", format: "4 Wochen mit 4 Live-Workshops und Transferaufgaben – nächster Start: {lernreiseStart}", link: "lernreise", knopf: "Zur Lernreise",
       text: "Ihr lernt gemeinsam live in vier Workshops und übertragt das Gelernte mit Transferaufgaben direkt in euren Alltag." },
     erstberatung: { titel: "Kostenlose Erstberatung", format: "30 Minuten online", link: "erstberatung", knopf: "Termin buchen",
-      text: "Ihr seid schon ein gutes Stück weit. In einem kostenlosen Erstgespräch schauen wir gemeinsam, was ihr braucht, um in die nächste Schleife zu kommen. Gerade der Schritt ins strategische Experimentieren gelingt mit Begleitung oft schneller." }
+      // Text je nach Stand: Übergang A→B, mitten in Phase B, Phase C (oder Übergang B→C)
+      text: {
+        AB: "Ihr seid schon ein gutes Stück weit. In einem kostenlosen Erstgespräch schauen wir gemeinsam, was ihr braucht, um in die nächste Schleife zu kommen. Gerade der Schritt ins strategische Experimentieren gelingt mit Begleitung oft schneller.",
+        B: "Ihr experimentiert schon gezielt. In einem kostenlosen Erstgespräch schauen wir gemeinsam, wie ihr Bedarfe klärt, Schwerpunkte setzt und eure Experimente so auswertet, dass daraus verlässliche Abläufe werden.",
+        C: "Ihr nutzt KI schon in mehreren Bereichen. Jetzt geht es darum, Erfolgreiches auszuweiten, für alle einzuführen und fest in Abläufe und Strukturen zu integrieren. In einem kostenlosen Erstgespräch schauen wir gemeinsam, wie ich euch beim Skalieren, Ausrollen und Integrieren unterstützen kann."
+      } }
   }
 };

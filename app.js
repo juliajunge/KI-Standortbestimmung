@@ -414,10 +414,12 @@
     }
     // Weiter fortgeschritten: Erstberatung, bei schwachen Kompetenzen zusätzlich die Lernangebote
     var h = I.angebote.erstberatung;
+    var stand = r.phase === "C" || (r.uebergang && r.uebergang[1] === "C") ? "C" :
+      (r.uebergang && r.uebergang[0] === "A" ? "AB" : "B");
     var html = '<div class="angebot-haupt"><span class="kleinlabel">Meine Empfehlung für euch</span>' +
       "<h3>" + esc(h.titel) + "</h3>" +
       '<p class="angebot-format">' + esc(ersetze(h.format)) + "</p>" +
-      "<p>" + esc(h.text) + "</p>" +
+      "<p>" + esc(h.text[stand]) + "</p>" +
       '<a class="knopf" href="' + link(h.link) + '" target="_blank" rel="noopener">&gt; ' + esc(h.knopf) + "</a></div>";
     if (r.dim.kompetenzen !== null && r.dim.kompetenzen <= 2) html += lernangeboteHtml(L.zusaetzlich);
     return html;
