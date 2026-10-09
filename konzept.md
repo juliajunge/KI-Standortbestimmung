@@ -147,7 +147,9 @@ Für jeden Bereich kann man eine von fünf Antworten wählen: *Trifft bei uns ni
 - Mittelakquise und Fundraising (Förderanträge, Spendenbriefe)
 - Öffentlichkeitsarbeit (Social Media, Newsletter, Presse)
 - Advocacy und Interessenvertretung (Stellungnahmen, Positionspapiere)
-- Zielgruppenkommunikation und Beratung (Anschreiben, Infomaterial)
+- Zielgruppenkommunikation (Anschreiben, Infomaterial)
+- Bildungsarbeit (Seminare, Workshops, Lernmaterialien)
+- Beratung (Vorbereitung, Recherche und Dokumentation von Beratungen)
 - Personal und Verwaltung (Ausschreibungen, Onboarding, Dokumentation)
 
 Kurzer Hinweis darunter: „Wenn du einen Bereich nicht kennst, wähle ‚Weiß nicht‘.“
@@ -307,7 +309,7 @@ Quelle: Reifegradmodell 2025, adaptiert nach T. Off/Paul Meyrat · Julia Junge �
 
 ## Entschieden nach der Konzeptphase
 
-- Arbeitsbereiche: die fünf aus dem Modell, ohne Ergänzung.
+- Arbeitsbereiche: die fünf aus dem Modell plus **Bildungsarbeit** und **Beratung**, damit die typischen Arbeitsbereiche von NGOs abgedeckt sind.
 - Lernreise: nach außen nur „Lernreise“, nächster Start **April 2027** (in `inhalt.js` unter `einstellungen` änderbar).
 - Footer verlinkt auf https://www.juliajunge.de/kontakt-und-impressum/
 - Schriften und Bilder liegen lokal: keine externen Anfragen, kein Tracking, kein Speichern.
