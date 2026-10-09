@@ -155,7 +155,6 @@ window.INHALT = {
         { id: "mittel", text: "Mittelakquise und Fundraising", beispiel: "Förderanträge, Spendenbriefe" },
         { id: "oeffentlichkeit", text: "Öffentlichkeitsarbeit", beispiel: "Social Media, Newsletter, Presse" },
         { id: "advocacy", text: "Advocacy und Interessenvertretung", beispiel: "Stellungnahmen, Positionspapiere" },
-        { id: "zielgruppen", text: "Zielgruppenkommunikation", beispiel: "Anschreiben, Infomaterial" },
         { id: "bildung", text: "Bildungsarbeit", beispiel: "Seminare, Workshops, Lernmaterialien" },
         { id: "beratung", text: "Beratung", beispiel: "Vorbereitung, Recherche und Dokumentation von Beratungen" },
         { id: "verwaltung", text: "Personal und Verwaltung", beispiel: "Ausschreibungen, Onboarding, Dokumentation" }
