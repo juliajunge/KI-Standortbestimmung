@@ -46,6 +46,9 @@ strong { font-weight: 700; }
 .seite { max-width: 760px; margin: 0 auto; padding: 32px 24px 48px; }
 
 /* Kopf */
+.zurueck { font-size: .8em; margin-bottom: 14px; }
+.zurueck a { color: var(--jj-green-dark); text-decoration: none; }
+.zurueck a:hover { text-decoration: underline; color: var(--jj-orange); }
 .kopf { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 32px; }
 .kopf .logo { height: 28px; width: auto; display: block; }
 
